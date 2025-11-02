@@ -2,7 +2,6 @@
 """
 Main pipeline runner for Energy Forecasting Project
 """
-
 import warnings
 import os
 import sys
@@ -10,9 +9,9 @@ import sys
 warnings.filterwarnings('ignore')
 
 # Import local modules
-from data_loader import DataLoader
-from preprocessor import DataPreprocessor
-from feature_engineer import FeatureEngineer
+from src.data_loader import DataLoader
+from src.preprocessor import DataPreprocessor
+from src.feature_engineer import FeatureEngineer
 from train import ModelTrainer
 
 import yaml

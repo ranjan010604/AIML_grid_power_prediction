@@ -188,7 +188,6 @@ def main():
         day_map = {"Monday": 0, "Tuesday": 1, "Wednesday": 2, "Thursday": 3,
                    "Friday": 4, "Saturday": 5, "Sunday": 6}
 
-        # Create input features (simplified - in practice, you'd use actual feature engineering)
         input_features = {
             'Hour': hour,
             'DayOfWeek': day_map[day_of_week],
@@ -197,7 +196,6 @@ def main():
             'Humidity': humidity
         }
 
-        # Mock prediction (replace with actual model prediction)
         base_consumption = 2.0
         temp_effect = max(0, (temperature - 20) * 0.05)
         hour_effect = 0.8 * np.sin((hour - 6) * np.pi / 12)
@@ -205,7 +203,7 @@ def main():
         humidity_effect = (humidity - 60) * 0.001
 
         prediction = base_consumption + temp_effect + hour_effect + weekend_effect + humidity_effect
-        prediction = max(0.1, prediction)  # Ensure positive
+        prediction = max(0.1, prediction)
 
         # Display prediction
         col1, col2, col3 = st.columns(3)
@@ -265,6 +263,11 @@ def main():
         hourly_avg = df.groupby(df.index.hour)['Global_active_power'].mean()
         daily_avg = df.groupby(df.index.dayofweek)['Global_active_power'].mean()
 
+        # Ensure all 7 days are represented (0=Mon, 6=Sun)
+        all_days = range(7)
+        daily_avg = daily_avg.reindex(all_days, fill_value=0)
+        days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
         col1, col2 = st.columns(2)
 
         with col1:
@@ -277,7 +280,6 @@ def main():
             st.plotly_chart(fig_hourly, use_container_width=True)
 
         with col2:
-            days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
             fig_daily = px.bar(
                 x=days, y=daily_avg.values,
                 title="Average Weekly Pattern",
@@ -291,6 +293,9 @@ def main():
         monthly_avg = df.groupby(df.index.month)['Global_active_power'].mean()
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+        # Ensure all 12 months are represented
+        monthly_avg = monthly_avg.reindex(range(1, 13), fill_value=0)
 
         fig_seasonal = px.line(
             x=months, y=monthly_avg.values,

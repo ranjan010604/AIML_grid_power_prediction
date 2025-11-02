@@ -6,7 +6,7 @@ import joblib
 import json
 import os
 
-from model_registry import ModelRegistry
+from src.model_registry import ModelRegistry
 
 
 class ModelTrainer:
