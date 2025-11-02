@@ -69,7 +69,7 @@ def load_models_and_data():
 
 def main():
     # Header
-    st.markdown('<h1 class="main-header">⚡ Smart Grid Energy Analytics Dashboard</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">Grid Energy Analytics Dashboard</h1>', unsafe_allow_html=True)
 
     # Load data
     performance, model, scaler, df = load_models_and_data()
