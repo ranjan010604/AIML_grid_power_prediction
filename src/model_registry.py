@@ -2,7 +2,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 
-
+#model registary updated 
 class ModelRegistry:
     def __init__(self):
         self.models = {
