@@ -8,7 +8,7 @@ import joblib
 import json
 from datetime import datetime, timedelta
 
-# Page configuration
+# Page configuration updated
 st.set_page_config(
     page_title="Smart Grid Energy Analytics",
     page_icon="⚡",
