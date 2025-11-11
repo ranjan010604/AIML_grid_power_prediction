@@ -8,7 +8,7 @@ import os
 
 from src.model_registry import ModelRegistry
 
-
+##updated train model
 class ModelTrainer:
     def __init__(self, config):
         self.config = config
