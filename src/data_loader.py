@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
+#data loader updated according to need
 
 class DataLoader:
     def __init__(self, config):
