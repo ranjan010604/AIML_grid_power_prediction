@@ -15,10 +15,10 @@ A comprehensive machine learning solution for predicting energy consumption in s
 - **📊 Comprehensive Analytics**: Model performance comparison and energy pattern analysis
 
 ## Screenshots
-![image](/images/Dashboard.png)
-![image](/images/overview.png)
-![image](/images/models.png)
-![image](/images/realtime_prediction.png)
+![image](/images/1_dashboard.png)
+![image](/images/2_overview.png)
+![image](/images/3_models.png)
+![image](/images/4_realtime_prediction.png)
 
 ## 🛠️ Install dependencies
 1. pip install -r requiremets.txt
