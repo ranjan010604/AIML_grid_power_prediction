@@ -1,2 +1,4 @@
-"models/*.pkl" 
-"models/*.pkl" 
+models/*.pkl
+__pycache__/
+*.pyc
+data/raw/*.txt   # if you want to avoid accidentally adding large files in future
