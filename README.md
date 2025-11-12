@@ -20,16 +20,30 @@ A comprehensive machine learning solution for predicting energy consumption in s
 ![image](/images/models.png)
 ![image](/images/realtime_prediction.png)
 
-## 🛠️ Installation
+## 🛠️ Install dependencies
 1. pip install -r requiremets.txt
 
-## model training
-1. python run_pipeline.py
-2. python train.py
+## prepare data
+1. python src/data_loader.py
+2. python src/preprocessor.py
+
+## Train model
+1. python debug/debug_full_pipeline.py
+2. python model_training/train.py
+
+## generate forecast
+1. python pipeline/run_pipeline.py
 
 ## run in local and predict the output
 1. streamlit run dashboard.py
+
 Access the interactive dashboard at `http://localhost:8501`
+
+## if any issue in data loading or procesing
+1. python debug/debug_data.py
+2. python debug/extend_data_fixed.py
+3. For any issue preffare to debug folder
+
 ## How to use?
 
 - Clone the repository
@@ -39,7 +53,7 @@ Access the interactive dashboard at `http://localhost:8501`
 ### Prerequisites
 
 - Python 3.8 or higher
-- pip or conda
+- pip 
 
 ## 📊 Model Performance
 
