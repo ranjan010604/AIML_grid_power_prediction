@@ -1,0 +1,17 @@
+data:
+  raw_path: "data/raw/household_power_consumption.txt"
+  processed_path: "data/processed/hourly_energy_data.csv"
+
+model:
+  n_steps: 24
+  test_size: 0.2
+  random_state: 42
+
+training:
+  lstm_epochs: 50
+  lstm_batch_size: 32
+  validation_split: 0.2
+
+features:
+  lag_features: [24, 48]
+  rolling_windows: [24, 72]

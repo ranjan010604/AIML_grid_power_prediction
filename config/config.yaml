@@ -1,0 +1,24 @@
+data:
+  raw_path: "data/raw/household_power_consumption_extended.txt"
+  processed_path: "data/processed/hourly_energy_data.csv"
+  featured_path: "data/processed/feature_engineered_data.csv"
+  
+model:
+  target: "Global_active_power"
+  test_size: 0.2
+  random_state: 42
+  n_steps: 24
+  
+training:
+  lstm_epochs: 50
+  lstm_batch_size: 32
+  validation_split: 0.2
+  
+features:
+  lag_features: [24, 48, 168]
+  rolling_windows: [24, 72, 168]
+  
+paths:
+  models_dir: "models/"
+  reports_dir: "reports/"
+  logs_dir: "logs/"
